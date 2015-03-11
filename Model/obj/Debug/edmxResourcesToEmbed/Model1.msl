@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="APICallsDetail">
+      <EntityTypeMapping TypeName="Model.APICallsDetail">
+        <MappingFragment StoreEntitySet="APICallsDetail">
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Operation" ColumnName="Operation" />
+          <ScalarProperty Name="PlatformCode" ColumnName="PlatformCode" />
+          <ScalarProperty Name="APICount" ColumnName="APICount" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClickDetail">
+      <EntityTypeMapping TypeName="Model.ClickDetail">
+        <MappingFragment StoreEntitySet="ClickDetail">
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DataTaskId" ColumnName="DataTaskId" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="OwenerId" ColumnName="OwenerId" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustDataReport">
+      <EntityTypeMapping TypeName="Model.CustDataReport">
+        <MappingFragment StoreEntitySet="CustDataReport">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Platform" ColumnName="Platform" />
+          <ScalarProperty Name="BouncedType" ColumnName="BouncedType" />
+          <ScalarProperty Name="BouncedTime" ColumnName="BouncedTime" />
+          <ScalarProperty Name="FailureTime" ColumnName="FailureTime" />
+          <ScalarProperty Name="UnsubscribedTime" ColumnName="UnsubscribedTime" />
+          <ScalarProperty Name="ClickTime" ColumnName="ClickTime" />
+          <ScalarProperty Name="OpenTime" ColumnName="OpenTime" />
+          <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
+          <ScalarProperty Name="SendTime" ColumnName="SendTime" />
+          <ScalarProperty Name="UpdateOrAdd" ColumnName="UpdateOrAdd" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="ColumnNmae" ColumnName="ColumnNmae" />
+          <ScalarProperty Name="Row" ColumnName="Row" />
+          <ScalarProperty Name="CustDataTaskId" ColumnName="CustDataTaskId" />
+          <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustDataTask">
+      <EntityTypeMapping TypeName="Model.CustDataTask">
+        <MappingFragment StoreEntitySet="CustDataTask">
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="CompleteCount" ColumnName="CompleteCount" />
+          <ScalarProperty Name="RecordCount" ColumnName="RecordCount" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="Completetime" ColumnName="Completetime" />
+          <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Email">
+      <EntityTypeMapping TypeName="Model.Email">
+        <MappingFragment StoreEntitySet="Email">
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="IsError" ColumnName="IsError" />
+          <ScalarProperty Name="CEmailId" ColumnName="CEmailId" />
+          <ScalarProperty Name="IsStatistic" ColumnName="IsStatistic" />
+          <ScalarProperty Name="Domain" ColumnName="Domain" />
+          <ScalarProperty Name="CampainId" ColumnName="CampainId" />
+          <ScalarProperty Name="EmailTaskId" ColumnName="EmailTaskId" />
+          <ScalarProperty Name="SendTime" ColumnName="SendTime" />
+          <ScalarProperty Name="DataTaskId" ColumnName="DataTaskId" />
+          <ScalarProperty Name="EmailDesc" ColumnName="EmailDesc" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="FromEmailAddress" ColumnName="FromEmailAddress" />
+          <ScalarProperty Name="FromName" ColumnName="FromName" />
+          <ScalarProperty Name="OwenerId" ColumnName="OwenerId" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailScore">
+      <EntityTypeMapping TypeName="Model.EmailScore">
+        <MappingFragment StoreEntitySet="EmailScore">
+          <ScalarProperty Name="LatestRecordTime" ColumnName="LatestRecordTime" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="EmailType" ColumnName="EmailType" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailSetting">
+      <EntityTypeMapping TypeName="Model.EmailSetting">
+        <MappingFragment StoreEntitySet="EmailSetting">
+          <ScalarProperty Name="ValidateTime" ColumnName="ValidateTime" />
+          <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FileUpload">
+      <EntityTypeMapping TypeName="Model.FileUpload">
+        <MappingFragment StoreEntitySet="FileUpload">
+          <ScalarProperty Name="ErrorMS" ColumnName="ErrorMS" />
+          <ScalarProperty Name="UpStatue" ColumnName="UpStatue" />
+          <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+          <ScalarProperty Name="Master" ColumnName="Master" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OpenDetail">
+      <EntityTypeMapping TypeName="Model.OpenDetail">
+        <MappingFragment StoreEntitySet="OpenDetail">
+          <ScalarProperty Name="DataTaskId" ColumnName="DataTaskId" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RestSharpLog">
+      <EntityTypeMapping TypeName="Model.RestSharpLog">
+        <MappingFragment StoreEntitySet="RestSharpLog">
+          <ScalarProperty Name="VerifyType" ColumnName="VerifyType" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="IsSuccess" ColumnName="IsSuccess" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="VerifyCode" ColumnName="VerifyCode" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Operate" ColumnName="Operate" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLogs">
+      <EntityTypeMapping TypeName="Model.UserLogs">
+        <MappingFragment StoreEntitySet="UserLogs">
+          <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Exception" ColumnName="Exception" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="Operate" ColumnName="Operate" />
+          <ScalarProperty Name="LogLevel" ColumnName="LogLevel" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Model.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="open_user_nick" ColumnName="open_user_nick" />
+          <ScalarProperty Name="openid" ColumnName="openid" />
+          <ScalarProperty Name="social_user_nick" ColumnName="social_user_nick" />
+          <ScalarProperty Name="social_uid" ColumnName="social_uid" />
+          <ScalarProperty Name="taobao_user_nick" ColumnName="taobao_user_nick" />
+          <ScalarProperty Name="TaobaoID" ColumnName="TaobaoID" />
+          <ScalarProperty Name="referrer" ColumnName="referrer" />
+          <ScalarProperty Name="modify" ColumnName="modify" />
+          <ScalarProperty Name="LoginCount" ColumnName="LoginCount" />
+          <ScalarProperty Name="Actid" ColumnName="Actid" />
+          <ScalarProperty Name="TakeState" ColumnName="TakeState" />
+          <ScalarProperty Name="CodeState" ColumnName="CodeState" />
+          <ScalarProperty Name="CodeTime" ColumnName="CodeTime" />
+          <ScalarProperty Name="CheckCode" ColumnName="CheckCode" />
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+          <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="StateBirthday" ColumnName="StateBirthday" />
+          <ScalarProperty Name="HeadPortrait" ColumnName="HeadPortrait" />
+          <ScalarProperty Name="Hobby" ColumnName="Hobby" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="LoginWay" ColumnName="LoginWay" />
+          <ScalarProperty Name="IdNumber" ColumnName="IdNumber" />
+          <ScalarProperty Name="EnglishName" ColumnName="EnglishName" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="RefUserNo" ColumnName="RefUserNo" />
+          <ScalarProperty Name="ManagerName" ColumnName="ManagerName" />
+          <ScalarProperty Name="Homesite" ColumnName="Homesite" />
+          <ScalarProperty Name="Vmoney" ColumnName="Vmoney" />
+          <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="yqCode" ColumnName="yqCode" />
+          <ScalarProperty Name="LatestLoginIP" ColumnName="LatestLoginIP" />
+          <ScalarProperty Name="LatestLoginTime" ColumnName="LatestLoginTime" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LatelyLogin" ColumnName="LatelyLogin" />
+          <ScalarProperty Name="WangWang" ColumnName="WangWang" />
+          <ScalarProperty Name="QQ" ColumnName="QQ" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="RealName" ColumnName="RealName" />
+          <ScalarProperty Name="SubClassId" ColumnName="SubClassId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserNo" ColumnName="UserNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VmoneyDetailNew">
+      <EntityTypeMapping TypeName="Model.VmoneyDetailNew">
+        <MappingFragment StoreEntitySet="VmoneyDetailNew">
+          <ScalarProperty Name="tasktype" ColumnName="tasktype" />
+          <ScalarProperty Name="taskid" ColumnName="taskid" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Vmoney" ColumnName="Vmoney" />
+          <ScalarProperty Name="ToUserId" ColumnName="ToUserId" />
+          <ScalarProperty Name="FromUserId" ColumnName="FromUserId" />
+          <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

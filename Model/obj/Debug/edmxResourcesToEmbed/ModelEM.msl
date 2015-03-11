@@ -1,0 +1,602 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="EMEntities">
+    <EntitySetMapping Name="AKeyReply">
+      <EntityTypeMapping TypeName="Model.AKeyReply">
+        <MappingFragment StoreEntitySet="AKeyReply">
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Attachment">
+      <EntityTypeMapping TypeName="Model.Attachment">
+        <MappingFragment StoreEntitySet="Attachment">
+          <ScalarProperty Name="ErrorMS" ColumnName="ErrorMS" />
+          <ScalarProperty Name="UpStatue" ColumnName="UpStatue" />
+          <ScalarProperty Name="ContentId" ColumnName="ContentId" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="OwenerId" ColumnName="OwenerId" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DistributeRule">
+      <EntityTypeMapping TypeName="Model.DistributeRule">
+        <MappingFragment StoreEntitySet="DistributeRule">
+          <ScalarProperty Name="CustEmailId" ColumnName="CustEmailId" />
+          <ScalarProperty Name="CustManId" ColumnName="CustManId" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="DUserId" ColumnName="DUserId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DustbinRule">
+      <EntityTypeMapping TypeName="Model.DustbinRule">
+        <MappingFragment StoreEntitySet="DustbinRule">
+          <ScalarProperty Name="ExistSuffix" ColumnName="ExistSuffix" />
+          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+          <ScalarProperty Name="EType" ColumnName="EType" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailCode">
+      <EntityTypeMapping TypeName="Model.EmailCode">
+        <MappingFragment StoreEntitySet="EmailCode">
+          <ScalarProperty Name="SAccount" ColumnName="SAccount" />
+          <ScalarProperty Name="Times" ColumnName="Times" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="OwenerId" ColumnName="OwenerId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailDelivery">
+      <EntityTypeMapping TypeName="Model.EmailDelivery">
+        <MappingFragment StoreEntitySet="EmailDelivery">
+          <ScalarProperty Name="ResentWay" ColumnName="ResentWay" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Recipient" ColumnName="Recipient" />
+          <ScalarProperty Name="IsSuccess" ColumnName="IsSuccess" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailDeliveryBack">
+      <EntityTypeMapping TypeName="Model.EmailDeliveryBack">
+        <MappingFragment StoreEntitySet="EmailDeliveryBack">
+          <ScalarProperty Name="ResentWay" ColumnName="ResentWay" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Recipient" ColumnName="Recipient" />
+          <ScalarProperty Name="IsSuccess" ColumnName="IsSuccess" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailOpenDetail">
+      <EntityTypeMapping TypeName="Model.EmailOpenDetail">
+        <MappingFragment StoreEntitySet="EmailOpenDetail">
+          <ScalarProperty Name="OpenDetail" ColumnName="OpenDetail" />
+          <ScalarProperty Name="Recipient" ColumnName="Recipient" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailReceivedDetail">
+      <EntityTypeMapping TypeName="Model.EmailReceivedDetail">
+        <MappingFragment StoreEntitySet="EmailReceivedDetail">
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="IsAuto" ColumnName="IsAuto" />
+          <ScalarProperty Name="IsStop" ColumnName="IsStop" />
+          <ScalarProperty Name="PType" ColumnName="PType" />
+          <ScalarProperty Name="PNow" ColumnName="PNow" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailRelative">
+      <EntityTypeMapping TypeName="Model.EmailRelative">
+        <MappingFragment StoreEntitySet="EmailRelative">
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="EDId" ColumnName="EDId" />
+          <ScalarProperty Name="NewMessageId" ColumnName="NewMessageId" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Folder">
+      <EntityTypeMapping TypeName="Model.Folder">
+        <MappingFragment StoreEntitySet="Folder">
+          <ScalarProperty Name="Expand" ColumnName="Expand" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="FolderType" ColumnName="FolderType" />
+          <ScalarProperty Name="FolderPath" ColumnName="FolderPath" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="SuperId" ColumnName="SuperId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="OwenerId" ColumnName="OwenerId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inbox">
+      <EntityTypeMapping TypeName="Model.Inbox">
+        <MappingFragment StoreEntitySet="Inbox">
+          <ScalarProperty Name="EAttach" ColumnName="EAttach" />
+          <ScalarProperty Name="IsDistribute" ColumnName="IsDistribute" />
+          <ScalarProperty Name="IsDeal" ColumnName="IsDeal" />
+          <ScalarProperty Name="FavoritesPath" ColumnName="FavoritesPath" />
+          <ScalarProperty Name="FavoritesId" ColumnName="FavoritesId" />
+          <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+          <ScalarProperty Name="IsManual" ColumnName="IsManual" />
+          <ScalarProperty Name="FolderPath" ColumnName="FolderPath" />
+          <ScalarProperty Name="FolderId" ColumnName="FolderId" />
+          <ScalarProperty Name="InType" ColumnName="InType" />
+          <ScalarProperty Name="CodeId" ColumnName="CodeId" />
+          <ScalarProperty Name="Receiver" ColumnName="Receiver" />
+          <ScalarProperty Name="CC" ColumnName="CC" />
+          <ScalarProperty Name="BCC" ColumnName="BCC" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="EmailFilePath" ColumnName="EmailFilePath" />
+          <ScalarProperty Name="EmailFileName" ColumnName="EmailFileName" />
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Origin" ColumnName="Origin" />
+          <ScalarProperty Name="EAccount" ColumnName="EAccount" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="ReadTime" ColumnName="ReadTime" />
+          <ScalarProperty Name="RTime" ColumnName="RTime" />
+          <ScalarProperty Name="STime" ColumnName="STime" />
+          <ScalarProperty Name="ROrder" ColumnName="ROrder" />
+          <ScalarProperty Name="CustManIds" ColumnName="CustManIds" />
+          <ScalarProperty Name="Top3CustMan" ColumnName="Top3CustMan" />
+          <ScalarProperty Name="CustManId" ColumnName="CustManId" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="SAccount" ColumnName="SAccount" />
+          <ScalarProperty Name="Sender" ColumnName="Sender" />
+          <ScalarProperty Name="IsAttachment" ColumnName="IsAttachment" />
+          <ScalarProperty Name="IsReMark" ColumnName="IsReMark" />
+          <ScalarProperty Name="IsReply" ColumnName="IsReply" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="OwenerId" ColumnName="OwenerId" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoiceRule">
+      <EntityTypeMapping TypeName="Model.InvoiceRule">
+        <MappingFragment StoreEntitySet="InvoiceRule">
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="FolderId" ColumnName="FolderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MailUID">
+      <EntityTypeMapping TypeName="Model.MailUID">
+        <MappingFragment StoreEntitySet="MailUID">
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rule">
+      <EntityTypeMapping TypeName="Model.Rule">
+        <MappingFragment StoreEntitySet="Rule">
+          <ScalarProperty Name="FolderId" ColumnName="FolderId" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="ETime" ColumnName="ETime" />
+          <ScalarProperty Name="STime" ColumnName="STime" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="GOrE" ColumnName="GOrE" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="CSubject" ColumnName="CSubject" />
+          <ScalarProperty Name="Receiver" ColumnName="Receiver" />
+          <ScalarProperty Name="CReceiver" ColumnName="CReceiver" />
+          <ScalarProperty Name="Sender" ColumnName="Sender" />
+          <ScalarProperty Name="CSender" ColumnName="CSender" />
+          <ScalarProperty Name="IsUsing" ColumnName="IsUsing" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="OwenerId" ColumnName="OwenerId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAttachment">
+      <EntityTypeMapping TypeName="Model.SAttachment">
+        <MappingFragment StoreEntitySet="SAttachment">
+          <ScalarProperty Name="ErrorMS" ColumnName="ErrorMS" />
+          <ScalarProperty Name="UpStatue" ColumnName="UpStatue" />
+          <ScalarProperty Name="ContentId" ColumnName="ContentId" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="OwenerId" ColumnName="OwenerId" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sentbox">
+      <EntityTypeMapping TypeName="Model.Sentbox">
+        <MappingFragment StoreEntitySet="Sentbox">
+          <ScalarProperty Name="RAmount" ColumnName="RAmount" />
+          <ScalarProperty Name="Delivery" ColumnName="Delivery" />
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="IsFwd" ColumnName="IsFwd" />
+          <ScalarProperty Name="VDetailId" ColumnName="VDetailId" />
+          <ScalarProperty Name="CustIds" ColumnName="CustIds" />
+          <ScalarProperty Name="Top3Cust" ColumnName="Top3Cust" />
+          <ScalarProperty Name="CustManIds" ColumnName="CustManIds" />
+          <ScalarProperty Name="Top3CustMan" ColumnName="Top3CustMan" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="STime" ColumnName="STime" />
+          <ScalarProperty Name="SentStatu" ColumnName="SentStatu" />
+          <ScalarProperty Name="InboxId" ColumnName="InboxId" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Receiver" ColumnName="Receiver" />
+          <ScalarProperty Name="SAccount" ColumnName="SAccount" />
+          <ScalarProperty Name="Sender" ColumnName="Sender" />
+          <ScalarProperty Name="CC" ColumnName="CC" />
+          <ScalarProperty Name="BCC" ColumnName="BCC" />
+          <ScalarProperty Name="IsAttachment" ColumnName="IsAttachment" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="OwenerId" ColumnName="OwenerId" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Test">
+      <EntityTypeMapping TypeName="Model.Test">
+        <MappingFragment StoreEntitySet="Test">
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="SuperId" ColumnName="SuperId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TInbox">
+      <EntityTypeMapping TypeName="Model.TInbox">
+        <MappingFragment StoreEntitySet="TInbox">
+          <ScalarProperty Name="EAttach" ColumnName="EAttach" />
+          <ScalarProperty Name="IsDistribute" ColumnName="IsDistribute" />
+          <ScalarProperty Name="Isdeal" ColumnName="Isdeal" />
+          <ScalarProperty Name="FavoritesPath" ColumnName="FavoritesPath" />
+          <ScalarProperty Name="FavoritesId" ColumnName="FavoritesId" />
+          <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+          <ScalarProperty Name="FolderPath" ColumnName="FolderPath" />
+          <ScalarProperty Name="FolderId" ColumnName="FolderId" />
+          <ScalarProperty Name="Trade" ColumnName="Trade" />
+          <ScalarProperty Name="CustType" ColumnName="CustType" />
+          <ScalarProperty Name="RCustMan" ColumnName="RCustMan" />
+          <ScalarProperty Name="InType" ColumnName="InType" />
+          <ScalarProperty Name="DLevel" ColumnName="DLevel" />
+          <ScalarProperty Name="ILevel" ColumnName="ILevel" />
+          <ScalarProperty Name="Top3CustMan" ColumnName="Top3CustMan" />
+          <ScalarProperty Name="RCustomer" ColumnName="RCustomer" />
+          <ScalarProperty Name="CodeId" ColumnName="CodeId" />
+          <ScalarProperty Name="Receiver" ColumnName="Receiver" />
+          <ScalarProperty Name="CC" ColumnName="CC" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="EmailFilePath" ColumnName="EmailFilePath" />
+          <ScalarProperty Name="EmailFileName" ColumnName="EmailFileName" />
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Origin" ColumnName="Origin" />
+          <ScalarProperty Name="EAccount" ColumnName="EAccount" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="ReadTime" ColumnName="ReadTime" />
+          <ScalarProperty Name="RTime" ColumnName="RTime" />
+          <ScalarProperty Name="STime" ColumnName="STime" />
+          <ScalarProperty Name="ROrder" ColumnName="ROrder" />
+          <ScalarProperty Name="CustManIds" ColumnName="CustManIds" />
+          <ScalarProperty Name="CustManId" ColumnName="CustManId" />
+          <ScalarProperty Name="CustManName" ColumnName="CustManName" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="SAccount" ColumnName="SAccount" />
+          <ScalarProperty Name="Sender" ColumnName="Sender" />
+          <ScalarProperty Name="IsAttachment" ColumnName="IsAttachment" />
+          <ScalarProperty Name="IsReMark" ColumnName="IsReMark" />
+          <ScalarProperty Name="IsReply" ColumnName="IsReply" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="OwenerId" ColumnName="OwenerId" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="InboxId" ColumnName="InboxId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TLeft">
+      <EntityTypeMapping TypeName="Model.TLeft">
+        <MappingFragment StoreEntitySet="TLeft">
+          <ScalarProperty Name="CustTypeName" ColumnName="CustTypeName" />
+          <ScalarProperty Name="CustType" ColumnName="CustType" />
+          <ScalarProperty Name="Trade" ColumnName="Trade" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="InType" ColumnName="InType" />
+          <ScalarProperty Name="DLevel" ColumnName="DLevel" />
+          <ScalarProperty Name="ILevel" ColumnName="ILevel" />
+          <ScalarProperty Name="BCustMan" ColumnName="BCustMan" />
+          <ScalarProperty Name="CustManId" ColumnName="CustManId" />
+          <ScalarProperty Name="BCust" ColumnName="BCust" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="IsReply" ColumnName="IsReply" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="OwenerId" ColumnName="OwenerId" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TLeftA">
+      <EntityTypeMapping TypeName="Model.TLeftA">
+        <MappingFragment StoreEntitySet="TLeftA">
+          <ScalarProperty Name="CustManId" ColumnName="CustManId" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="Expand" ColumnName="Expand" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="FolderType" ColumnName="FolderType" />
+          <ScalarProperty Name="FolderPath" ColumnName="FolderPath" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="SuperId" ColumnName="SuperId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="OwenerId" ColumnName="OwenerId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FolderId" ColumnName="FolderId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TLeftB">
+      <EntityTypeMapping TypeName="Model.TLeftB">
+        <MappingFragment StoreEntitySet="TLeftB">
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="FolderID" ColumnName="FolderID" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CustManId" ColumnName="CustManId" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="BCust" ColumnName="BCust" />
+          <ScalarProperty Name="SuperId" ColumnName="SuperId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TLeftC">
+      <EntityTypeMapping TypeName="Model.TLeftC">
+        <MappingFragment StoreEntitySet="TLeftC">
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="FolderID" ColumnName="FolderID" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CustManId" ColumnName="CustManId" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="BCust" ColumnName="BCust" />
+          <ScalarProperty Name="SuperId" ColumnName="SuperId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TLeftD">
+      <EntityTypeMapping TypeName="Model.TLeftD">
+        <MappingFragment StoreEntitySet="TLeftD">
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="FolderID" ColumnName="FolderID" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ILevel" ColumnName="ILevel" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CustManId" ColumnName="CustManId" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="NodeName" ColumnName="NodeName" />
+          <ScalarProperty Name="SuperId" ColumnName="SuperId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TLeftE">
+      <EntityTypeMapping TypeName="Model.TLeftE">
+        <MappingFragment StoreEntitySet="TLeftE">
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="FolderID" ColumnName="FolderID" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CustManId" ColumnName="CustManId" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="NodeName" ColumnName="NodeName" />
+          <ScalarProperty Name="SuperId" ColumnName="SuperId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TLeftF">
+      <EntityTypeMapping TypeName="Model.TLeftF">
+        <MappingFragment StoreEntitySet="TLeftF">
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="FolderID" ColumnName="FolderID" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="CustType" ColumnName="CustType" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CustManId" ColumnName="CustManId" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="NodeName" ColumnName="NodeName" />
+          <ScalarProperty Name="SuperId" ColumnName="SuperId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TLeftG">
+      <EntityTypeMapping TypeName="Model.TLeftG">
+        <MappingFragment StoreEntitySet="TLeftG">
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="FolderID" ColumnName="FolderID" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="DLevel" ColumnName="DLevel" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CustManId" ColumnName="CustManId" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="NodeName" ColumnName="NodeName" />
+          <ScalarProperty Name="SuperId" ColumnName="SuperId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TSentbox">
+      <EntityTypeMapping TypeName="Model.TSentbox">
+        <MappingFragment StoreEntitySet="TSentbox">
+          <ScalarProperty Name="Delivery" ColumnName="Delivery" />
+          <ScalarProperty Name="IsFwd" ColumnName="IsFwd" />
+          <ScalarProperty Name="Receiver" ColumnName="Receiver" />
+          <ScalarProperty Name="RCust" ColumnName="RCust" />
+          <ScalarProperty Name="Top3Cust" ColumnName="Top3Cust" />
+          <ScalarProperty Name="CustIds" ColumnName="CustIds" />
+          <ScalarProperty Name="RCustMan" ColumnName="RCustMan" />
+          <ScalarProperty Name="CustManIds" ColumnName="CustManIds" />
+          <ScalarProperty Name="Top3CustMan" ColumnName="Top3CustMan" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="STime" ColumnName="STime" />
+          <ScalarProperty Name="SentStatu" ColumnName="SentStatu" />
+          <ScalarProperty Name="InboxId" ColumnName="InboxId" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="CC" ColumnName="CC" />
+          <ScalarProperty Name="BCC" ColumnName="BCC" />
+          <ScalarProperty Name="SAccount" ColumnName="SAccount" />
+          <ScalarProperty Name="Sender" ColumnName="Sender" />
+          <ScalarProperty Name="IsAttachment" ColumnName="IsAttachment" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="OwenerId" ColumnName="OwenerId" />
+          <ScalarProperty Name="DelState" ColumnName="DelState" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SentBoxId" ColumnName="SentBoxId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

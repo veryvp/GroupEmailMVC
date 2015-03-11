@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="EDMEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="APICallsDetail" EntityType="Model.APICallsDetail" />
+    <EntitySet Name="Contact" EntityType="Model.Contact" />
+    <EntitySet Name="EmailBlackList" EntityType="Model.EmailBlackList" />
+    <EntitySet Name="EmailExceptionList" EntityType="Model.EmailExceptionList" />
+    <EntitySet Name="EmailPlatform" EntityType="Model.EmailPlatform" />
+    <EntitySet Name="EmailRecipientList" EntityType="Model.EmailRecipientList" />
+    <EntitySet Name="ExhibitionConfig" EntityType="Model.ExhibitionConfig" />
+    <EntitySet Name="GAttachment" EntityType="Model.GAttachment" />
+    <EntitySet Name="GroupEmail" EntityType="Model.GroupEmail" />
+    <EntitySet Name="GroupEmailConfig" EntityType="Model.GroupEmailConfig" />
+    <EntitySet Name="GroupEmailFailureList" EntityType="Model.GroupEmailFailureList" />
+    <EntitySet Name="GroupEmailQueue" EntityType="Model.GroupEmailQueue" />
+    <EntitySet Name="GroupEmailQueueTask" EntityType="Model.GroupEmailQueueTask" />
+    <EntitySet Name="GroupEmailQueueTaskDetail" EntityType="Model.GroupEmailQueueTaskDetail" />
+    <EntitySet Name="GroupEmailReport" EntityType="Model.GroupEmailReport" />
+    <EntitySet Name="GroupEmailReportBouncedDetail" EntityType="Model.GroupEmailReportBouncedDetail" />
+    <EntitySet Name="GroupEmailReportClickDetail" EntityType="Model.GroupEmailReportClickDetail" />
+    <EntitySet Name="GroupEmailReportOpen" EntityType="Model.GroupEmailReportOpen" />
+    <EntitySet Name="GroupEmailReportSendDetail" EntityType="Model.GroupEmailReportSendDetail" />
+    <EntitySet Name="GroupEmailSentConfig" EntityType="Model.GroupEmailSentConfig" />
+    <EntitySet Name="GroupEmailStatistic" EntityType="Model.GroupEmailStatistic" />
+    <EntitySet Name="GroupEmailUnsubscribedList" EntityType="Model.GroupEmailUnsubscribedList" />
+    <EntitySet Name="GroupEmailUrlClick" EntityType="Model.GroupEmailUrlClick" />
+    <EntitySet Name="linshibounce" EntityType="Model.linshibounce" />
+    <EntitySet Name="MGListName" EntityType="Model.MGListName" />
+  </EntityContainer>
+  <EntityType Name="APICallsDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="Int32" Name="APICount" />
+    <Property Type="String" Name="PlatformCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Operation" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IP" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="Addtime" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Int64" Name="EmailRecipientListId" />
+    <Property Type="Int32" Name="CustId" />
+    <Property Type="Int32" Name="CustManId" />
+    <Property Type="Int32" Name="CustManEmailId" />
+  </EntityType>
+  <EntityType Name="EmailBlackList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Email" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Byte" Name="ListType" />
+    <Property Type="Int64" Name="EmailRecipientListId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="Int32" Name="CustId" />
+    <Property Type="Int32" Name="CustManId" />
+    <Property Type="Int32" Name="CustManEmailId" />
+    <Property Type="DateTime" Name="ValidDate" />
+  </EntityType>
+  <EntityType Name="EmailExceptionList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Int64" Name="EmailRecipientListId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="Byte" Name="ListType" />
+    <Property Type="Int32" Name="CustId" />
+    <Property Type="String" Name="Email" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CustManId" />
+    <Property Type="Int32" Name="CustManEmailId" />
+    <Property Type="DateTime" Name="ValidDate" />
+  </EntityType>
+  <EntityType Name="EmailPlatform">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="PlatformName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PlatformCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="IsDefault" />
+    <Property Type="String" Name="WebSite" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="MaxAmountPerMinute" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Byte" Name="DelState" />
+  </EntityType>
+  <EntityType Name="EmailRecipientList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ListName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ListDesc" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ListNumber" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="String" Name="AutoCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastSendTime" />
+    <Property Type="String" Name="EmailListContent" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="ListType" />
+  </EntityType>
+  <EntityType Name="ExhibitionConfig">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GAttachment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="String" Name="Name" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FileName" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FilePath" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="EmailId" />
+    <Property Type="Int64" Name="Size" />
+    <Property Type="Int16" Name="UpStatue" />
+    <Property Type="String" Name="ErrorMS" MaxLength="2000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GroupEmail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Subject" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EmailDesc" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Body" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FromName" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FromEmailAddress" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Byte" Name="IsSent" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="Byte" Name="EmailType" />
+    <Property Type="DateTime" Name="SendTime" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+  </EntityType>
+  <EntityType Name="GroupEmailConfig">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Int32" Name="PerSendAmount" />
+    <Property Type="String" Name="DefaultPlatformCode" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GroupEmailFailureList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="FailureTime" />
+    <Property Type="String" Name="Subject" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="GroupEmailId" />
+    <Property Type="Int32" Name="CustId" />
+    <Property Type="Int32" Name="CustManId" />
+    <Property Type="Int32" Name="CustManEmailId" />
+    <Property Type="Int64" Name="QueueId" />
+    <Property Type="String" Name="Email" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Int64" Name="QueueTaskId" />
+    <Property Type="Int64" Name="EmailRecipientListId" />
+    <Property Type="String" Name="ListName" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GroupEmailQueue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="GroupEmailId" />
+    <Property Type="Int64" Name="EmailRecipientListId" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="DateTime" Name="SendTime" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="SendAmount" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Byte" Name="IsUpload" />
+    <Property Type="Byte" Name="IsSentUnsubscribe" />
+    <Property Type="Int64" Name="VmoneyDetailId" />
+    <Property Type="Byte" Name="IsComplete" />
+    <Property Type="Int32" Name="SentBatch" />
+    <Property Type="Int32" Name="TotalBatch" />
+    <Property Type="String" Name="ErrorMessage" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="IsError" />
+    <Property Type="String" Name="QName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="QDesc" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="SentType" />
+    <Property Type="Int32" Name="SentCode" />
+    <Property Type="String" Name="Campaign" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GroupEmailQueueTask">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="Addtime" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="String" Name="PlatformCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="TaskBatches" />
+    <Property Type="Byte" Name="IsUpload" />
+    <Property Type="Int64" Name="QueueId" />
+    <Property Type="Int32" Name="EmailTaskId" />
+    <Property Type="Int32" Name="SendAmount" />
+    <Property Type="DateTime" Name="SentTime" />
+    <Property Type="String" Name="ErrorMessage" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="IsError" />
+    <Property Type="Int64" Name="ReportId" />
+    <Property Type="Int32" Name="EmailId" />
+    <Property Type="String" Name="FileName" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GroupEmailQueueTaskDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="Addtime" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Int32" Name="CustId" />
+    <Property Type="Int32" Name="TaskBatches" />
+    <Property Type="Int64" Name="QueueTaskId" />
+    <Property Type="Int32" Name="CustManId" />
+    <Property Type="Int32" Name="CustManEmailId" />
+    <Property Type="String" Name="Email" MaxLength="400" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GroupEmailReport">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="QueueId" />
+    <Property Type="Int64" Name="QueueTaskId" />
+    <Property Type="Decimal" Name="TotalSent" Precision="12" Scale="0" />
+    <Property Type="Decimal" Name="TotalBounced" Precision="12" Scale="0" />
+    <Property Type="Decimal" Name="Delivered" Precision="12" Scale="0" />
+    <Property Type="Decimal" Name="HardBounced" Precision="12" Scale="0" />
+    <Property Type="Decimal" Name="SoftBounced" Precision="12" Scale="0" />
+    <Property Type="Decimal" Name="TotalOpened" Precision="12" Scale="0" />
+    <Property Type="Decimal" Name="UniqueOpened" Precision="12" Scale="0" />
+    <Property Type="Decimal" Name="TotalClicked" Precision="12" Scale="0" />
+    <Property Type="Decimal" Name="UniqueClicked" Precision="12" Scale="0" />
+    <Property Type="Decimal" Name="SpamReported" Precision="12" Scale="0" />
+    <Property Type="Decimal" Name="Unsubscribed" Precision="12" Scale="0" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Byte" Name="DelState" />
+  </EntityType>
+  <EntityType Name="GroupEmailReportBouncedDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ReportId" />
+    <Property Type="String" Name="Email" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="BouncedType" />
+    <Property Type="DateTime" Name="Date" />
+    <Property Type="Int32" Name="CustId" />
+    <Property Type="Int32" Name="CustManId" />
+    <Property Type="Int32" Name="CustManEmailId" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="Int64" Name="QueueId" />
+    <Property Type="String" Name="BouncedMessage" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GroupEmailReportClickDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ReportId" />
+    <Property Type="String" Name="Email" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IPAddress" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Province" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Country" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Date" />
+    <Property Type="String" Name="URL" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CustId" />
+    <Property Type="Int32" Name="CustManId" />
+    <Property Type="Int32" Name="CustManEmailId" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="Int64" Name="QueueId" />
+  </EntityType>
+  <EntityType Name="GroupEmailReportOpen">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ReportId" />
+    <Property Type="String" Name="Email" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IPAddress" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Province" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Country" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Date" />
+    <Property Type="Int32" Name="CustId" Nullable="false" />
+    <Property Type="Int32" Name="CustManId" />
+    <Property Type="Int32" Name="CustManEmailId" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="Int64" Name="QueueId" />
+  </EntityType>
+  <EntityType Name="GroupEmailReportSendDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ReportId" />
+    <Property Type="String" Name="Email" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="SentTime" />
+    <Property Type="Byte" Name="IsSent" />
+    <Property Type="DateTime" Name="DeliveredTime" />
+    <Property Type="Byte" Name="IsDelivered" />
+    <Property Type="DateTime" Name="UnsubscribedTime" />
+    <Property Type="Byte" Name="IsUnsubscribed" />
+    <Property Type="Int32" Name="CustId" />
+    <Property Type="Int32" Name="CustManId" />
+    <Property Type="Int32" Name="CustManEmailId" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="Int64" Name="QueueId" />
+  </EntityType>
+  <EntityType Name="GroupEmailSentConfig">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Int32" Name="ListId" />
+    <Property Type="Int32" Name="EmailTaskId" />
+  </EntityType>
+  <EntityType Name="GroupEmailStatistic">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="SendTime" />
+    <Property Type="Int64" Name="QueueId" />
+    <Property Type="Int64" Name="RecipientListId" />
+    <Property Type="Int64" Name="GroupEmailId" />
+    <Property Type="Int32" Name="TotalSent" />
+    <Property Type="Int32" Name="Delivered" />
+    <Property Type="Int32" Name="TotalBounced" />
+    <Property Type="Int32" Name="HardBounced" />
+    <Property Type="Int32" Name="SoftBounced" />
+    <Property Type="Int32" Name="TotalOpened" />
+    <Property Type="Int32" Name="UniqueOpened" />
+    <Property Type="Int32" Name="TotalClicked" />
+    <Property Type="Int32" Name="UniqueClicked" />
+    <Property Type="Int32" Name="Unsubscribed" />
+    <Property Type="Int32" Name="SpamReported" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="Byte" Name="Status" />
+    <Property Type="String" Name="QName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="QDesc" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GroupEmailUnsubscribedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="UnsubscribedTime" />
+    <Property Type="String" Name="Subject" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="GroupEmailId" />
+    <Property Type="Int32" Name="CustId" />
+    <Property Type="Int32" Name="CustManId" />
+    <Property Type="Int32" Name="CustManEmailId" />
+    <Property Type="Int64" Name="QueueId" />
+    <Property Type="String" Name="Email" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Int64" Name="QueueTaskId" />
+    <Property Type="Int64" Name="EmailRecipientListId" />
+    <Property Type="String" Name="ListName" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GroupEmailUrlClick">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="QueueId" />
+    <Property Type="String" Name="Url" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="TotalClick" />
+    <Property Type="Decimal" Name="TotalClickPercent" Precision="7" Scale="6" />
+    <Property Type="Int32" Name="UniqueClick" />
+    <Property Type="Decimal" Name="UniqueClickPercent" Precision="7" Scale="6" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Byte" Name="DelState" />
+  </EntityType>
+  <EntityType Name="linshibounce">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="domain" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="code" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="timestamp" />
+    <Property Type="String" Name="error" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="recipient" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="event" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MGListName">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="String" Name="ListName" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

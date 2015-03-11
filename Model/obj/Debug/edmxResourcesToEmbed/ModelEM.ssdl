@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="AKeyReply" EntityType="Model.Store.AKeyReply" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Attachment" EntityType="Model.Store.Attachment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DistributeRule" EntityType="Model.Store.DistributeRule" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DustbinRule" EntityType="Model.Store.DustbinRule" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmailCode" EntityType="Model.Store.EmailCode" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmailDelivery" EntityType="Model.Store.EmailDelivery" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmailDeliveryBack" EntityType="Model.Store.EmailDeliveryBack" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmailOpenDetail" EntityType="Model.Store.EmailOpenDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmailReceivedDetail" EntityType="Model.Store.EmailReceivedDetail" store:Type="Tables" store:Schema="dbo" store:Name="EmailReceivedDetail">
+      <DefiningQuery>SELECT 
+      [EmailReceivedDetail].[Id] AS [Id], 
+      [EmailReceivedDetail].[UserId] AS [UserId], 
+      [EmailReceivedDetail].[ParentId] AS [ParentId], 
+      [EmailReceivedDetail].[DelState] AS [DelState], 
+      [EmailReceivedDetail].[AddTime] AS [AddTime], 
+      [EmailReceivedDetail].[Account] AS [Account], 
+      [EmailReceivedDetail].[Total] AS [Total], 
+      [EmailReceivedDetail].[PNow] AS [PNow], 
+      [EmailReceivedDetail].[PType] AS [PType], 
+      [EmailReceivedDetail].[IsStop] AS [IsStop], 
+      [EmailReceivedDetail].[IsAuto] AS [IsAuto], 
+      [EmailReceivedDetail].[EndTime] AS [EndTime]
+      FROM [dbo].[EmailReceivedDetail] AS [EmailReceivedDetail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="EmailRelative" EntityType="Model.Store.EmailRelative" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Folder" EntityType="Model.Store.Folder" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Inbox" EntityType="Model.Store.Inbox" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InvoiceRule" EntityType="Model.Store.InvoiceRule" store:Type="Tables" store:Schema="dbo" store:Name="InvoiceRule">
+      <DefiningQuery>SELECT 
+      [InvoiceRule].[FolderId] AS [FolderId], 
+      [InvoiceRule].[EmailId] AS [EmailId]
+      FROM [dbo].[InvoiceRule] AS [InvoiceRule]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MailUID" EntityType="Model.Store.MailUID" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Rule" EntityType="Model.Store.Rule" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SAttachment" EntityType="Model.Store.SAttachment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sentbox" EntityType="Model.Store.Sentbox" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Test" EntityType="Model.Store.Test" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TInbox" EntityType="Model.Store.TInbox" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TLeft" EntityType="Model.Store.TLeft" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TLeftA" EntityType="Model.Store.TLeftA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TLeftB" EntityType="Model.Store.TLeftB" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TLeftC" EntityType="Model.Store.TLeftC" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TLeftD" EntityType="Model.Store.TLeftD" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TLeftE" EntityType="Model.Store.TLeftE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TLeftF" EntityType="Model.Store.TLeftF" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TLeftG" EntityType="Model.Store.TLeftG" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TSentbox" EntityType="Model.Store.TSentbox" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="AKeyReply">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="Subject" Type="nvarchar(max)" />
+    <Property Name="Body" Type="text" />
+    <Property Name="Sort" Type="int" />
+  </EntityType>
+  <EntityType Name="Attachment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="OwenerId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="500" />
+    <Property Name="FilePath" Type="nvarchar" MaxLength="1000" />
+    <Property Name="EmailId" Type="bigint" />
+    <Property Name="Size" Type="bigint" />
+    <Property Name="ContentId" Type="nvarchar" MaxLength="500" />
+    <Property Name="UpStatue" Type="smallint" />
+    <Property Name="ErrorMS" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="DistributeRule">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="Email" Type="nvarchar" MaxLength="400" />
+    <Property Name="DUserId" Type="int" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="CustManId" Type="int" />
+    <Property Name="CustEmailId" Type="int" />
+  </EntityType>
+  <EntityType Name="DustbinRule">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AddTime" Type="datetime" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="Email" Type="nvarchar" MaxLength="400" />
+    <Property Name="EType" Type="tinyint" />
+    <Property Name="Suffix" Type="nvarchar" MaxLength="100" />
+    <Property Name="ExistSuffix" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="EmailCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="OwenerId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="Code" Type="nvarchar" MaxLength="54" />
+    <Property Name="Times" Type="int" />
+    <Property Name="SAccount" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="EmailDelivery">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="EmailId" Type="bigint" />
+    <Property Name="IsSuccess" Type="tinyint" />
+    <Property Name="Recipient" Type="nvarchar" MaxLength="500" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Reason" Type="nvarchar" MaxLength="500" />
+    <Property Name="ResentWay" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EmailDeliveryBack">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="EmailId" Type="bigint" />
+    <Property Name="IsSuccess" Type="tinyint" />
+    <Property Name="Recipient" Type="nvarchar" MaxLength="500" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Reason" Type="nvarchar" MaxLength="500" />
+    <Property Name="ResentWay" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EmailOpenDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="EmailId" Type="bigint" />
+    <Property Name="IP" Type="nvarchar" MaxLength="20" />
+    <Property Name="Region" Type="nvarchar" MaxLength="300" />
+    <Property Name="Country" Type="nvarchar" MaxLength="100" />
+    <Property Name="Province" Type="nvarchar" MaxLength="100" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+    <Property Name="Recipient" Type="nvarchar" MaxLength="400" />
+    <Property Name="OpenDetail" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“iTradeEM.dbo.EmailReceivedDetail”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="EmailReceivedDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="Account" Type="nvarchar" MaxLength="400" />
+    <Property Name="Total" Type="int" />
+    <Property Name="PNow" Type="int" />
+    <Property Name="PType" Type="tinyint" />
+    <Property Name="IsStop" Type="tinyint" />
+    <Property Name="IsAuto" Type="tinyint" />
+    <Property Name="EndTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EmailRelative">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="NewMessageId" Type="nvarchar" MaxLength="100" />
+    <Property Name="EDId" Type="bigint" />
+    <Property Name="EmailId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Folder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="OwenerId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="SuperId" Type="int" />
+    <Property Name="Grade" Type="tinyint" />
+    <Property Name="FolderPath" Type="nvarchar" MaxLength="100" />
+    <Property Name="FolderType" Type="tinyint" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Expand" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Inbox">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="OwenerId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="State" Type="tinyint" />
+    <Property Name="IsRead" Type="tinyint" />
+    <Property Name="IsReply" Type="tinyint" />
+    <Property Name="IsReMark" Type="tinyint" />
+    <Property Name="IsAttachment" Type="tinyint" />
+    <Property Name="Sender" Type="nvarchar" MaxLength="400" />
+    <Property Name="SAccount" Type="nvarchar" MaxLength="400" />
+    <Property Name="Subject" Type="nvarchar(max)" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="CustManId" Type="int" />
+    <Property Name="Top3CustMan" Type="nvarchar" MaxLength="100" />
+    <Property Name="CustManIds" Type="nvarchar(max)" />
+    <Property Name="ROrder" Type="nvarchar" MaxLength="500" />
+    <Property Name="STime" Type="datetime" />
+    <Property Name="RTime" Type="datetime" />
+    <Property Name="ReadTime" Type="datetime" />
+    <Property Name="Size" Type="int" />
+    <Property Name="EAccount" Type="nvarchar" MaxLength="200" />
+    <Property Name="Origin" Type="nvarchar" MaxLength="100" />
+    <Property Name="Note" Type="text" />
+    <Property Name="MessageId" Type="nvarchar" MaxLength="100" />
+    <Property Name="EmailFileName" Type="nvarchar" MaxLength="255" />
+    <Property Name="EmailFilePath" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Body" Type="text" />
+    <Property Name="BCC" Type="nvarchar(max)" />
+    <Property Name="CC" Type="nvarchar(max)" />
+    <Property Name="Receiver" Type="nvarchar(max)" />
+    <Property Name="CodeId" Type="int" />
+    <Property Name="InType" Type="tinyint" />
+    <Property Name="FolderId" Type="int" />
+    <Property Name="FolderPath" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsManual" Type="tinyint" />
+    <Property Name="InvoiceId" Type="int" />
+    <Property Name="FavoritesId" Type="int" />
+    <Property Name="FavoritesPath" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsDeal" Type="tinyint" />
+    <Property Name="IsDistribute" Type="tinyint" />
+    <Property Name="EAttach" Type="tinyint" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“iTradeEM.dbo.InvoiceRule”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="InvoiceRule">
+    <Key>
+      <PropertyRef Name="FolderId" />
+      <PropertyRef Name="EmailId" />
+    </Key>
+    <Property Name="FolderId" Type="int" Nullable="false" />
+    <Property Name="EmailId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MailUID">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MessageId" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Account" Type="nvarchar" MaxLength="200" />
+    <Property Name="Num" Type="int" />
+  </EntityType>
+  <EntityType Name="Rule">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="OwenerId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="IsUsing" Type="tinyint" />
+    <Property Name="CSender" Type="tinyint" />
+    <Property Name="Sender" Type="nvarchar" MaxLength="200" />
+    <Property Name="CReceiver" Type="tinyint" />
+    <Property Name="Receiver" Type="nvarchar" MaxLength="200" />
+    <Property Name="CSubject" Type="tinyint" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="600" />
+    <Property Name="GOrE" Type="tinyint" />
+    <Property Name="Size" Type="int" />
+    <Property Name="STime" Type="datetime" />
+    <Property Name="ETime" Type="datetime" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="FolderId" Type="int" />
+  </EntityType>
+  <EntityType Name="SAttachment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="OwenerId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="500" />
+    <Property Name="FilePath" Type="nvarchar" MaxLength="1000" />
+    <Property Name="EmailId" Type="bigint" />
+    <Property Name="Size" Type="bigint" />
+    <Property Name="ContentId" Type="nvarchar" MaxLength="500" />
+    <Property Name="UpStatue" Type="smallint" />
+    <Property Name="ErrorMS" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="Sentbox">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="OwenerId" Type="nvarchar" MaxLength="2000" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="IsAttachment" Type="tinyint" />
+    <Property Name="BCC" Type="nvarchar(max)" />
+    <Property Name="CC" Type="nvarchar(max)" />
+    <Property Name="Sender" Type="nvarchar" MaxLength="100" />
+    <Property Name="SAccount" Type="nvarchar" MaxLength="200" />
+    <Property Name="Receiver" Type="nvarchar(max)" />
+    <Property Name="Subject" Type="nvarchar(max)" />
+    <Property Name="Body" Type="text" />
+    <Property Name="InboxId" Type="bigint" />
+    <Property Name="SentStatu" Type="tinyint" />
+    <Property Name="STime" Type="datetime" />
+    <Property Name="Note" Type="text" />
+    <Property Name="Top3CustMan" Type="nvarchar" MaxLength="100" />
+    <Property Name="CustManIds" Type="nvarchar(max)" />
+    <Property Name="Top3Cust" Type="nvarchar" MaxLength="100" />
+    <Property Name="CustIds" Type="nvarchar(max)" />
+    <Property Name="VDetailId" Type="bigint" />
+    <Property Name="IsFwd" Type="tinyint" />
+    <Property Name="MessageId" Type="nvarchar" MaxLength="100" />
+    <Property Name="Delivery" Type="tinyint" />
+    <Property Name="RAmount" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Test">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="SuperId" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="Level" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="TInbox">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InboxId" Type="bigint" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="OwenerId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="State" Type="tinyint" />
+    <Property Name="IsRead" Type="tinyint" />
+    <Property Name="IsReply" Type="tinyint" />
+    <Property Name="IsReMark" Type="tinyint" />
+    <Property Name="IsAttachment" Type="tinyint" />
+    <Property Name="Sender" Type="nvarchar" MaxLength="400" />
+    <Property Name="SAccount" Type="nvarchar" MaxLength="400" />
+    <Property Name="Subject" Type="nvarchar(max)" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="CustManName" Type="nvarchar" MaxLength="200" />
+    <Property Name="CustManId" Type="int" />
+    <Property Name="CustManIds" Type="nvarchar(max)" />
+    <Property Name="ROrder" Type="nvarchar" MaxLength="500" />
+    <Property Name="STime" Type="datetime" />
+    <Property Name="RTime" Type="datetime" />
+    <Property Name="ReadTime" Type="datetime" />
+    <Property Name="Size" Type="int" />
+    <Property Name="EAccount" Type="nvarchar" MaxLength="200" />
+    <Property Name="Origin" Type="nvarchar" MaxLength="100" />
+    <Property Name="Note" Type="text" />
+    <Property Name="MessageId" Type="nvarchar" MaxLength="100" />
+    <Property Name="EmailFileName" Type="nvarchar" MaxLength="255" />
+    <Property Name="EmailFilePath" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Body" Type="text" />
+    <Property Name="CC" Type="nvarchar(max)" />
+    <Property Name="Receiver" Type="nvarchar(max)" />
+    <Property Name="CodeId" Type="int" />
+    <Property Name="RCustomer" Type="nvarchar" MaxLength="200" />
+    <Property Name="Top3CustMan" Type="nvarchar" MaxLength="100" />
+    <Property Name="ILevel" Type="tinyint" />
+    <Property Name="DLevel" Type="tinyint" />
+    <Property Name="InType" Type="tinyint" />
+    <Property Name="RCustMan" Type="nvarchar" MaxLength="1000" />
+    <Property Name="CustType" Type="int" />
+    <Property Name="Trade" Type="nvarchar" MaxLength="20" />
+    <Property Name="FolderId" Type="int" />
+    <Property Name="FolderPath" Type="nvarchar" MaxLength="100" />
+    <Property Name="InvoiceId" Type="int" />
+    <Property Name="FavoritesId" Type="int" />
+    <Property Name="FavoritesPath" Type="nvarchar" MaxLength="100" />
+    <Property Name="Isdeal" Type="tinyint" />
+    <Property Name="IsDistribute" Type="tinyint" />
+    <Property Name="EAttach" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="TLeft">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="OwenerId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="State" Type="tinyint" />
+    <Property Name="IsRead" Type="tinyint" />
+    <Property Name="IsReply" Type="tinyint" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="BCust" Type="nvarchar" MaxLength="200" />
+    <Property Name="CustManId" Type="int" />
+    <Property Name="BCustMan" Type="nvarchar" MaxLength="200" />
+    <Property Name="ILevel" Type="tinyint" />
+    <Property Name="DLevel" Type="tinyint" />
+    <Property Name="InType" Type="tinyint" />
+    <Property Name="Num" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" />
+    <Property Name="Trade" Type="nvarchar" MaxLength="20" />
+    <Property Name="CustType" Type="int" />
+    <Property Name="CustTypeName" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="TLeftA">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FolderId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="OwenerId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="SuperId" Type="int" />
+    <Property Name="Grade" Type="tinyint" />
+    <Property Name="FolderPath" Type="nvarchar" MaxLength="100" />
+    <Property Name="FolderType" Type="tinyint" />
+    <Property Name="Num" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Expand" Type="tinyint" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="CustManId" Type="int" />
+  </EntityType>
+  <EntityType Name="TLeftB">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SuperId" Type="int" Nullable="false" />
+    <Property Name="BCust" Type="nvarchar" MaxLength="200" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="CustManId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Num" Type="int" />
+    <Property Name="Level" Type="int" Nullable="false" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="FolderID" Type="int" />
+    <Property Name="Sort" Type="int" />
+  </EntityType>
+  <EntityType Name="TLeftC">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SuperId" Type="int" Nullable="false" />
+    <Property Name="BCust" Type="nvarchar" MaxLength="200" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="CustManId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Num" Type="int" />
+    <Property Name="Level" Type="int" Nullable="false" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="FolderID" Type="int" />
+    <Property Name="Sort" Type="int" />
+  </EntityType>
+  <EntityType Name="TLeftD">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SuperId" Type="int" Nullable="false" />
+    <Property Name="NodeName" Type="nvarchar" MaxLength="200" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="CustManId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Num" Type="int" />
+    <Property Name="Level" Type="int" Nullable="false" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="ILevel" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="FolderID" Type="int" />
+    <Property Name="Sort" Type="int" />
+  </EntityType>
+  <EntityType Name="TLeftE">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SuperId" Type="int" Nullable="false" />
+    <Property Name="NodeName" Type="nvarchar" MaxLength="200" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="CustManId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Num" Type="int" />
+    <Property Name="Level" Type="int" Nullable="false" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="FolderID" Type="int" />
+    <Property Name="Sort" Type="int" />
+  </EntityType>
+  <EntityType Name="TLeftF">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SuperId" Type="int" Nullable="false" />
+    <Property Name="NodeName" Type="nvarchar" MaxLength="200" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="CustManId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Num" Type="int" />
+    <Property Name="Level" Type="int" Nullable="false" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="CustType" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="FolderID" Type="int" />
+    <Property Name="Sort" Type="int" />
+  </EntityType>
+  <EntityType Name="TLeftG">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SuperId" Type="int" Nullable="false" />
+    <Property Name="NodeName" Type="nvarchar" MaxLength="200" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="CustManId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Num" Type="int" />
+    <Property Name="Level" Type="int" Nullable="false" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DLevel" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="FolderID" Type="int" />
+    <Property Name="Sort" Type="int" />
+  </EntityType>
+  <EntityType Name="TSentbox">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SentBoxId" Type="bigint" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="OwenerId" Type="nvarchar" MaxLength="2000" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="IsAttachment" Type="tinyint" />
+    <Property Name="Sender" Type="nvarchar" MaxLength="100" />
+    <Property Name="SAccount" Type="nvarchar" MaxLength="200" />
+    <Property Name="BCC" Type="nvarchar(max)" />
+    <Property Name="CC" Type="nvarchar(max)" />
+    <Property Name="Subject" Type="nvarchar(max)" />
+    <Property Name="Body" Type="text" />
+    <Property Name="InboxId" Type="bigint" />
+    <Property Name="SentStatu" Type="tinyint" />
+    <Property Name="STime" Type="datetime" />
+    <Property Name="Note" Type="text" />
+    <Property Name="Top3CustMan" Type="nvarchar" MaxLength="100" />
+    <Property Name="CustManIds" Type="nvarchar(max)" />
+    <Property Name="RCustMan" Type="nvarchar" MaxLength="800" />
+    <Property Name="CustIds" Type="nvarchar(max)" />
+    <Property Name="Top3Cust" Type="nvarchar" MaxLength="100" />
+    <Property Name="RCust" Type="nchar" MaxLength="1000" />
+    <Property Name="Receiver" Type="nvarchar(max)" />
+    <Property Name="IsFwd" Type="tinyint" />
+    <Property Name="Delivery" Type="tinyint" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6013: 表/视图“iTradeEM.dbo.CustRule”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+      
+      <EntityType Name="CustRule">
+        <Property Name="FolderId" Type="int" />
+        <Property Name="CustId" Type="int" />
+        <Property Name="RuleId" Type="int" />
+      </EntityType>-->
+</Schema>

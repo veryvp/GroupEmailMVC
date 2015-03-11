@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="APICallsDetail" EntityType="Model.Store.APICallsDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ClickDetail" EntityType="Model.Store.ClickDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustDataReport" EntityType="Model.Store.CustDataReport" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustDataTask" EntityType="Model.Store.CustDataTask" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Email" EntityType="Model.Store.Email" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmailScore" EntityType="Model.Store.EmailScore" store:Type="Tables" store:Schema="dbo" store:Name="EmailScore">
+      <DefiningQuery>SELECT 
+      [EmailScore].[Id] AS [Id], 
+      [EmailScore].[AddTime] AS [AddTime], 
+      [EmailScore].[Email] AS [Email], 
+      [EmailScore].[EmailType] AS [EmailType], 
+      [EmailScore].[Score] AS [Score], 
+      [EmailScore].[LatestRecordTime] AS [LatestRecordTime]
+      FROM [dbo].[EmailScore] AS [EmailScore]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="EmailSetting" EntityType="Model.Store.EmailSetting" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FileUpload" EntityType="Model.Store.FileUpload" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OpenDetail" EntityType="Model.Store.OpenDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RestSharpLog" EntityType="Model.Store.RestSharpLog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserLogs" EntityType="Model.Store.UserLogs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="Model.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VmoneyDetailNew" EntityType="Model.Store.VmoneyDetailNew" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="APICallsDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="APICount" Type="int" />
+    <Property Name="PlatformCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Operation" Type="nvarchar" MaxLength="50" />
+    <Property Name="IP" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ClickDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="OwenerId" Type="nvarchar" MaxLength="200" />
+    <Property Name="EmailId" Type="int" />
+    <Property Name="DataTaskId" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="400" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="20" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+    <Property Name="Province" Type="nvarchar" MaxLength="100" />
+    <Property Name="Country" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Url" Type="nvarchar" MaxLength="2050" />
+  </EntityType>
+  <EntityType Name="CustDataReport">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="CustDataTaskId" Type="int" />
+    <Property Name="Row" Type="int" />
+    <Property Name="ColumnNmae" Type="nvarchar" MaxLength="50" />
+    <Property Name="Message" Type="nvarchar" MaxLength="1000" />
+    <Property Name="UpdateOrAdd" Type="nvarchar" MaxLength="50" />
+    <Property Name="SendTime" Type="datetime" />
+    <Property Name="DeliveryTime" Type="datetime" />
+    <Property Name="OpenTime" Type="datetime" />
+    <Property Name="ClickTime" Type="datetime" />
+    <Property Name="UnsubscribedTime" Type="datetime" />
+    <Property Name="FailureTime" Type="datetime" />
+    <Property Name="BouncedTime" Type="datetime" />
+    <Property Name="BouncedType" Type="tinyint" />
+    <Property Name="Platform" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Email" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="CustDataTask">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Completetime" Type="datetime" />
+    <Property Name="FilePath" Type="nvarchar" MaxLength="100" />
+    <Property Name="RecordCount" Type="int" />
+    <Property Name="CompleteCount" Type="int" />
+    <Property Name="State" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Email">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="OwenerId" Type="nvarchar" MaxLength="200" />
+    <Property Name="FromName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FromEmailAddress" Type="nvarchar" MaxLength="400" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="500" />
+    <Property Name="Body" Type="ntext" />
+    <Property Name="EmailDesc" Type="nvarchar" MaxLength="300" />
+    <Property Name="DataTaskId" Type="int" />
+    <Property Name="SendTime" Type="datetime" />
+    <Property Name="EmailTaskId" Type="int" />
+    <Property Name="CampainId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Domain" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsStatistic" Type="tinyint" />
+    <Property Name="CEmailId" Type="int" />
+    <Property Name="IsError" Type="tinyint" />
+    <Property Name="ErrorMessage" Type="nvarchar(max)" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'GroupEmail.dbo.EmailScore' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="EmailScore">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="Email" Type="nvarchar" MaxLength="400" />
+    <Property Name="EmailType" Type="tinyint" />
+    <Property Name="Score" Type="tinyint" />
+    <Property Name="LatestRecordTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EmailSetting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Account" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Enabled" Type="int" Nullable="false" />
+    <Property Name="Owner" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="int" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="ValidateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FileUpload">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="FilePath" Type="nvarchar" MaxLength="200" />
+    <Property Name="FileSize" Type="int" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="500" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="2000" />
+    <Property Name="FileType" Type="varchar" MaxLength="20" />
+    <Property Name="TypeId" Type="int" />
+    <Property Name="Master" Type="tinyint" />
+    <Property Name="TypeCode" Type="tinyint" />
+    <Property Name="UpStatue" Type="nvarchar" MaxLength="50" />
+    <Property Name="ErrorMS" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="OpenDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="nvarchar" MaxLength="400" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="20" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+    <Property Name="Province" Type="nvarchar" MaxLength="100" />
+    <Property Name="Country" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="EmailId" Type="int" />
+    <Property Name="DataTaskId" Type="int" />
+  </EntityType>
+  <EntityType Name="RestSharpLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="OwnerId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="Operate" Type="tinyint" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="VerifyCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="IP" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsSuccess" Type="tinyint" />
+    <Property Name="Result" Type="nvarchar" MaxLength="500" />
+    <Property Name="VerifyType" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="UserLogs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LogLevel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Operate" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="MachineName" Type="nvarchar" MaxLength="32" />
+    <Property Name="IP" Type="nvarchar" MaxLength="32" />
+    <Property Name="Url" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Source" Type="nvarchar(max)" />
+    <Property Name="Exception" Type="nvarchar(max)" />
+    <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="Addtime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="TypeId" Type="int" />
+    <Property Name="SubClassId" Type="int" />
+    <Property Name="RealName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Sex" Type="int" />
+    <Property Name="GroupId" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="200" />
+    <Property Name="Email" Type="nvarchar" MaxLength="400" />
+    <Property Name="Birthday" Type="datetime" />
+    <Property Name="QQ" Type="nvarchar" MaxLength="200" />
+    <Property Name="WangWang" Type="nvarchar" MaxLength="200" />
+    <Property Name="LatelyLogin" Type="nvarchar" MaxLength="200" />
+    <Property Name="Description" Type="varchar" MaxLength="2000" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="LatestLoginTime" Type="datetime" />
+    <Property Name="LatestLoginIP" Type="nvarchar" MaxLength="200" />
+    <Property Name="yqCode" Type="nvarchar" MaxLength="200" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="FaxNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="Vmoney" Type="money" />
+    <Property Name="Homesite" Type="nvarchar" MaxLength="200" />
+    <Property Name="ManagerName" Type="nvarchar" MaxLength="200" />
+    <Property Name="RefUserNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="200" />
+    <Property Name="EnglishName" Type="nvarchar" MaxLength="200" />
+    <Property Name="IdNumber" Type="nvarchar" MaxLength="200" />
+    <Property Name="LoginWay" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Department" Type="nvarchar" />
+    <Property Name="Position" Type="nvarchar" MaxLength="200" />
+    <Property Name="Hobby" Type="nvarchar" MaxLength="2000" />
+    <Property Name="HeadPortrait" Type="nvarchar" MaxLength="200" />
+    <Property Name="StateBirthday" Type="int" />
+    <Property Name="DelState" Type="int" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="UserCode" Type="nvarchar" MaxLength="200" />
+    <Property Name="CheckCode" Type="nvarchar" MaxLength="200" />
+    <Property Name="CodeTime" Type="datetime" />
+    <Property Name="CodeState" Type="int" />
+    <Property Name="TakeState" Type="int" />
+    <Property Name="Actid" Type="smallint" />
+    <Property Name="LoginCount" Type="int" />
+    <Property Name="modify" Type="datetime" />
+    <Property Name="referrer" Type="int" />
+    <Property Name="TaobaoID" Type="nvarchar" MaxLength="1000" />
+    <Property Name="taobao_user_nick" Type="nvarchar" MaxLength="200" />
+    <Property Name="social_uid" Type="nvarchar" MaxLength="1000" />
+    <Property Name="social_user_nick" Type="nvarchar" MaxLength="500" />
+    <Property Name="openid" Type="nvarchar" MaxLength="1000" />
+    <Property Name="open_user_nick" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="VmoneyDetailNew">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="int" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="FromUserId" Type="int" />
+    <Property Name="ToUserId" Type="nchar" MaxLength="10" />
+    <Property Name="Vmoney" Type="money" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="TypeId" Type="smallint" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+    <Property Name="taskid" Type="int" />
+    <Property Name="tasktype" Type="smallint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6013: The table/view 'GroupEmail.dbo.Unsubscribed' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="Unsubscribed">
+        <Property Name="Id" Type="int" />
+        <Property Name="UserId" Type="int" />
+        <Property Name="ParentId" Type="int" />
+        <Property Name="DelState" Type="tinyint" />
+        <Property Name="AddTime" Type="datetime" />
+        <Property Name="OwenerId" Type="nvarchar" MaxLength="200" />
+        <Property Name="SAccount" Type="nvarchar" MaxLength="400" />
+        <Property Name="Email" Type="nvarchar" MaxLength="400" />
+        <Property Name="Date" Type="datetime" />
+        <Property Name="EmailId" Type="int" />
+      </EntityType>-->
+</Schema>

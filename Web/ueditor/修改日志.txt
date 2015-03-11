@@ -1,0 +1,90 @@
+-----------------2014/08/23 begin -----------------
+ueditor.all.js
+行 201203 添加代码   屏蔽编译器a标签点击编辑和删除href功能
+   if (editor.ui._dialogs.linkDialog) {
+	var link = editor.queryCommandValue('link');
+	var url;
+	--添加开始--
+	if(link && (link.tagName == "A" || link.nodeName == "A")){
+	    return;
+	}
+	--添加结束--
+	if (link && (url = (link.getAttribute('_href') || link.getAttribute('href', 2)))) {
+	    var txt = url;
+	    if (url.length > 30) {
+		txt = url.substring(0, 20) + "...";
+	    }
+	    if (html) {
+		html += '<div style="height:5px;"></div>'
+	    }
+	    html += popup.formatHtml(
+		'<nobr>' + editor.getLang("anthorMsg") + ': <a target="_blank" href="' + url + '" title="' + url + '" >' + txt + '</a>' +
+		    ' <span class="edui-clickable" onclick="$$._onEditButtonClick();">' + editor.getLang("modify") + '</span>' +
+		    ' <span class="edui-clickable" onclick="$$._onRemoveButtonClick(\'unlink\');"> ' + editor.getLang("clear") + '</span></nobr>');
+	    popup.showAnchor(link);
+	}
+    }
+
+-----------------2014/08/23 end-----------------
+
+
+
+var u = url.replace(/(^\s*)|(\s*$)/g, "");
+if(u.indexOf("mailto:")==0&&/^\d+$/.test(u.substr(7))){
+  return
+}
+
+-----------------2014/11/11 begin-----------------
+屏蔽上传图片时在线管理和图片搜索功能
+image.html
+            <div id="tabHeads" class="tabhead">
+                <span tabSrc="remote"  class="focus"><var id="lang_tab_remote"></var></span>
+                <span tabSrc="local"><var id="lang_tab_local"></var></span>
+<!--                <span tabSrc="imgManager"><var id="lang_tab_imgManager"></var></span>
+                <span tabSrc="imgSearch"><var id="lang_tab_imgSearch"></var></span>-->
+            </div>
+
+
+
+隐藏upload目录
+                    <div class="saveDir" style="display:none">
+                        <var id="lang_savePath" ></var>：<select id="savePath">
+                            <option value="1">upload</option>
+                            <!--<option value="2">upload1</option>-->
+                        </select>
+                    </div>
+
+
+修改默认字号为14 ueditor.js  原 'body{margin:8px;font-family:sans-serif;font-size:16px;}' +
+
+后 'body{margin:8px;font-family:sans-serif;font-size:14px;}' +
+
+-----------------2014/11/11 end-----------------
+
+
+-----------------2014/12/18 begin-----------------
+隐藏字数统计
+ueditor\themes\default\css\ueditor.css
+
+.edui-default .edui-editor-wordcount {
+    text-align: right;
+    margin-right: 5px;
+    color: #aaa;
+    display:none;
+}
+
+添加了样式 display:none;
+
+-----------------2014/12/18 end-----------------
+
+
+
+
+-----------------2015/01/08 begin-----------------
+回车改为添加br
+ueditor\ueditor.all.js
+            enterTag: 'p',改为
+            enterTag: 'br',
+添加了样式 display:none;
+
+-----------------2014/12/18 end-----------------

@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Web.MasterPage" %>
+
+<!DOCTYPE html >
+<html>
+	<head id="Head1" runat="server">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<title>VP外贸客户管理系统</title>
+		<meta name="keywords" content="VP，微匹科技，外贸CRM，外贸软件，外贸系统，外贸管理软件，外贸客户管理软件，外贸管理系统，外贸客户管理系统，">
+		<meta name="description" content="微匹科技 - VP外贸客户管理系统。9年外贸经验，没人比我们更懂您的需求，全球首款深度定制的免费客户管理系统。">
+		
+		<script src="/Js/Base/jquery-1.11.1.min.js" type="text/javascript"></script>
+		<script src="/js/Base/common.js"  type="text/javascript"></script>
+		
+		<link href="/bootstrap/css/bootstrap.css" rel="stylesheet" />
+		<link href="/bootstrap/font-awesome/css/font-awesome.css" rel="stylesheet" />
+		<link href="/style/square/green.css" type="text/css" rel="stylesheet"/>
+		<link href="/css/flat-ui.css" rel="stylesheet" />
+
+		<!--[if lt IE 9]>
+		  <script src="/js/Base/html5shiv.js"></script>
+		  <script src="/js/Base/respond.min.js"></script>
+		<![endif]-->
+
+		<script src="/Js/Base/Other.js" type="text/javascript"></script>
+		<script src="/Js/Base/Limit.js?sdfsdfsdfsdf" type="text/javascript"></script>
+		<script src="/Js/Base/Check.js" type="text/javascript"></script>
+		<script src="/Js/Web/Base.js?sdfsdfsdfsdf" type="text/javascript"></script>
+		<script src="/Js/Base/form.js" type="text/javascript"></script>
+		<script src="/Js/Base/box.js" type="text/javascript"></script>
+		<script src="/Js/Base/scroll.js" type="text/javascript"></script>
+
+		<asp:ContentPlaceHolder ID="head" runat="server">
+		</asp:ContentPlaceHolder>
+	</head>
+
+	<body>
+		<span id="_HideBeyondspan"  style="width:auto; display:none;"></span>
+		
+		<form id="form1" runat="server">
+			<div>
+				<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+				
+				</asp:ContentPlaceHolder>
+			</div>
+		</form>
+		
+		<script src="/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+		<script src="/js/bootstrap/bootstrap-select.js" type="text/javascript"></script>
+		<script src="/js/bootstrap/bootstrap-switch.js" type="text/javascript"></script>
+		<script src="/js/bootstrap/jquery.tagsinput.js" type="text/javascript"></script>
+		<script src="/js/bootstrap/jquery.placeholder.js" type="text/javascript"></script>
+		<script src="/js/bootstrap/application.js" type="text/javascript"></script>
+		<%=sizeauto%>
+	</body>
+</html>

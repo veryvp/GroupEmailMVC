@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="APICallsDetail" EntityType="Model.Store.APICallsDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Contact" EntityType="Model.Store.Contact" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmailBlackList" EntityType="Model.Store.EmailBlackList" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmailExceptionList" EntityType="Model.Store.EmailExceptionList" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmailPlatform" EntityType="Model.Store.EmailPlatform" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmailRecipientList" EntityType="Model.Store.EmailRecipientList" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ExhibitionConfig" EntityType="Model.Store.ExhibitionConfig" store:Type="Tables" store:Schema="dbo" store:Name="ExhibitionConfig">
+      <DefiningQuery>SELECT 
+      [ExhibitionConfig].[Id] AS [Id], 
+      [ExhibitionConfig].[Name] AS [Name]
+      FROM [dbo].[ExhibitionConfig] AS [ExhibitionConfig]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GAttachment" EntityType="Model.Store.GAttachment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupEmail" EntityType="Model.Store.GroupEmail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupEmailConfig" EntityType="Model.Store.GroupEmailConfig" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupEmailFailureList" EntityType="Model.Store.GroupEmailFailureList" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupEmailQueue" EntityType="Model.Store.GroupEmailQueue" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupEmailQueueTask" EntityType="Model.Store.GroupEmailQueueTask" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupEmailQueueTaskDetail" EntityType="Model.Store.GroupEmailQueueTaskDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupEmailReport" EntityType="Model.Store.GroupEmailReport" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupEmailReportBouncedDetail" EntityType="Model.Store.GroupEmailReportBouncedDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupEmailReportClickDetail" EntityType="Model.Store.GroupEmailReportClickDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupEmailReportOpen" EntityType="Model.Store.GroupEmailReportOpen" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupEmailReportSendDetail" EntityType="Model.Store.GroupEmailReportSendDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupEmailSentConfig" EntityType="Model.Store.GroupEmailSentConfig" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupEmailStatistic" EntityType="Model.Store.GroupEmailStatistic" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupEmailUnsubscribedList" EntityType="Model.Store.GroupEmailUnsubscribedList" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupEmailUrlClick" EntityType="Model.Store.GroupEmailUrlClick" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="linshibounce" EntityType="Model.Store.linshibounce" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MGListName" EntityType="Model.Store.MGListName" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="APICallsDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="APICount" Type="int" />
+    <Property Name="PlatformCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Operation" Type="nvarchar" MaxLength="50" />
+    <Property Name="IP" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="EmailRecipientListId" Type="bigint" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="CustManId" Type="int" />
+    <Property Name="CustManEmailId" Type="int" />
+  </EntityType>
+  <EntityType Name="EmailBlackList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="ListType" Type="tinyint" />
+    <Property Name="EmailRecipientListId" Type="bigint" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="CustManId" Type="int" />
+    <Property Name="CustManEmailId" Type="int" />
+    <Property Name="ValidDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EmailExceptionList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="EmailRecipientListId" Type="bigint" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="ListType" Type="tinyint" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="400" />
+    <Property Name="CustManId" Type="int" />
+    <Property Name="CustManEmailId" Type="int" />
+    <Property Name="ValidDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EmailPlatform">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PlatformName" Type="nvarchar" MaxLength="100" />
+    <Property Name="PlatformCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDefault" Type="tinyint" />
+    <Property Name="WebSite" Type="nvarchar" MaxLength="250" />
+    <Property Name="MaxAmountPerMinute" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="DelState" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="EmailRecipientList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ListName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ListDesc" Type="nvarchar" MaxLength="200" />
+    <Property Name="ListNumber" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="AutoCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastSendTime" Type="datetime" />
+    <Property Name="EmailListContent" Type="nvarchar(max)" />
+    <Property Name="ListType" Type="tinyint" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“iTradeEDM.dbo.ExhibitionConfig”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="ExhibitionConfig">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="GAttachment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="500" />
+    <Property Name="FilePath" Type="nvarchar" MaxLength="1000" />
+    <Property Name="EmailId" Type="bigint" />
+    <Property Name="Size" Type="bigint" />
+    <Property Name="UpStatue" Type="smallint" />
+    <Property Name="ErrorMS" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="GroupEmail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="500" />
+    <Property Name="EmailDesc" Type="nvarchar" MaxLength="300" />
+    <Property Name="Body" Type="ntext" />
+    <Property Name="FromName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FromEmailAddress" Type="nvarchar" MaxLength="200" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="IsSent" Type="tinyint" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="EmailType" Type="tinyint" />
+    <Property Name="SendTime" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+  </EntityType>
+  <EntityType Name="GroupEmailConfig">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="PerSendAmount" Type="int" />
+    <Property Name="DefaultPlatformCode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="GroupEmailFailureList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FailureTime" Type="datetime" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="150" />
+    <Property Name="GroupEmailId" Type="bigint" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="CustManId" Type="int" />
+    <Property Name="CustManEmailId" Type="int" />
+    <Property Name="QueueId" Type="bigint" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="QueueTaskId" Type="bigint" />
+    <Property Name="EmailRecipientListId" Type="bigint" />
+    <Property Name="ListName" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="GroupEmailQueue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GroupEmailId" Type="bigint" />
+    <Property Name="EmailRecipientListId" Type="bigint" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="SendTime" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="SendAmount" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="IsUpload" Type="tinyint" />
+    <Property Name="IsSentUnsubscribe" Type="tinyint" />
+    <Property Name="VmoneyDetailId" Type="bigint" />
+    <Property Name="IsComplete" Type="tinyint" />
+    <Property Name="SentBatch" Type="int" />
+    <Property Name="TotalBatch" Type="int" />
+    <Property Name="ErrorMessage" Type="nvarchar(max)" />
+    <Property Name="IsError" Type="tinyint" />
+    <Property Name="QName" Type="nvarchar" MaxLength="100" />
+    <Property Name="QDesc" Type="nvarchar" MaxLength="200" />
+    <Property Name="SentType" Type="tinyint" />
+    <Property Name="SentCode" Type="int" />
+    <Property Name="Campaign" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="GroupEmailQueueTask">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="PlatformCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaskBatches" Type="int" />
+    <Property Name="IsUpload" Type="tinyint" />
+    <Property Name="QueueId" Type="bigint" />
+    <Property Name="EmailTaskId" Type="int" />
+    <Property Name="SendAmount" Type="int" />
+    <Property Name="SentTime" Type="datetime" />
+    <Property Name="ErrorMessage" Type="nvarchar(max)" />
+    <Property Name="IsError" Type="tinyint" />
+    <Property Name="ReportId" Type="bigint" />
+    <Property Name="EmailId" Type="int" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="GroupEmailQueueTaskDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="TaskBatches" Type="int" />
+    <Property Name="QueueTaskId" Type="bigint" />
+    <Property Name="CustManId" Type="int" />
+    <Property Name="CustManEmailId" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="GroupEmailReport">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="QueueId" Type="bigint" />
+    <Property Name="QueueTaskId" Type="bigint" />
+    <Property Name="TotalSent" Type="numeric" Precision="12" />
+    <Property Name="TotalBounced" Type="numeric" Precision="12" />
+    <Property Name="Delivered" Type="numeric" Precision="12" />
+    <Property Name="HardBounced" Type="numeric" Precision="12" />
+    <Property Name="SoftBounced" Type="numeric" Precision="12" />
+    <Property Name="TotalOpened" Type="numeric" Precision="12" />
+    <Property Name="UniqueOpened" Type="numeric" Precision="12" />
+    <Property Name="TotalClicked" Type="numeric" Precision="12" />
+    <Property Name="UniqueClicked" Type="numeric" Precision="12" />
+    <Property Name="SpamReported" Type="numeric" Precision="12" />
+    <Property Name="Unsubscribed" Type="numeric" Precision="12" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="GroupEmailReportBouncedDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ReportId" Type="bigint" />
+    <Property Name="Email" Type="nvarchar" MaxLength="400" />
+    <Property Name="BouncedType" Type="tinyint" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="CustManId" Type="int" />
+    <Property Name="CustManEmailId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="QueueId" Type="bigint" />
+    <Property Name="BouncedMessage" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="GroupEmailReportClickDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ReportId" Type="bigint" />
+    <Property Name="Email" Type="nvarchar" MaxLength="400" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="20" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+    <Property Name="Province" Type="nvarchar" MaxLength="100" />
+    <Property Name="Country" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="URL" Type="nvarchar" MaxLength="2000" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="CustManId" Type="int" />
+    <Property Name="CustManEmailId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="QueueId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="GroupEmailReportOpen">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ReportId" Type="bigint" />
+    <Property Name="Email" Type="nvarchar" MaxLength="400" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="20" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+    <Property Name="Province" Type="nvarchar" MaxLength="100" />
+    <Property Name="Country" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="CustId" Type="int" Nullable="false" />
+    <Property Name="CustManId" Type="int" />
+    <Property Name="CustManEmailId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="QueueId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="GroupEmailReportSendDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ReportId" Type="bigint" />
+    <Property Name="Email" Type="nvarchar" MaxLength="400" />
+    <Property Name="SentTime" Type="datetime" />
+    <Property Name="IsSent" Type="tinyint" />
+    <Property Name="DeliveredTime" Type="datetime" />
+    <Property Name="IsDelivered" Type="tinyint" />
+    <Property Name="UnsubscribedTime" Type="datetime" />
+    <Property Name="IsUnsubscribed" Type="tinyint" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="CustManId" Type="int" />
+    <Property Name="CustManEmailId" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="QueueId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="GroupEmailSentConfig">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="ListId" Type="int" />
+    <Property Name="EmailTaskId" Type="int" />
+  </EntityType>
+  <EntityType Name="GroupEmailStatistic">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SendTime" Type="datetime" />
+    <Property Name="QueueId" Type="bigint" />
+    <Property Name="RecipientListId" Type="bigint" />
+    <Property Name="GroupEmailId" Type="bigint" />
+    <Property Name="TotalSent" Type="int" />
+    <Property Name="Delivered" Type="int" />
+    <Property Name="TotalBounced" Type="int" />
+    <Property Name="HardBounced" Type="int" />
+    <Property Name="SoftBounced" Type="int" />
+    <Property Name="TotalOpened" Type="int" />
+    <Property Name="UniqueOpened" Type="int" />
+    <Property Name="TotalClicked" Type="int" />
+    <Property Name="UniqueClicked" Type="int" />
+    <Property Name="Unsubscribed" Type="int" />
+    <Property Name="SpamReported" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="Status" Type="tinyint" />
+    <Property Name="QName" Type="nvarchar" MaxLength="100" />
+    <Property Name="QDesc" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="GroupEmailUnsubscribedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UnsubscribedTime" Type="datetime" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="150" />
+    <Property Name="GroupEmailId" Type="bigint" />
+    <Property Name="CustId" Type="int" />
+    <Property Name="CustManId" Type="int" />
+    <Property Name="CustManEmailId" Type="int" />
+    <Property Name="QueueId" Type="bigint" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="QueueTaskId" Type="bigint" />
+    <Property Name="EmailRecipientListId" Type="bigint" />
+    <Property Name="ListName" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="GroupEmailUrlClick">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="QueueId" Type="bigint" />
+    <Property Name="Url" Type="nvarchar" MaxLength="2000" />
+    <Property Name="TotalClick" Type="int" />
+    <Property Name="TotalClickPercent" Type="numeric" Precision="7" Scale="6" />
+    <Property Name="UniqueClick" Type="int" />
+    <Property Name="UniqueClickPercent" Type="numeric" Precision="7" Scale="6" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="linshibounce">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="domain" Type="nvarchar" MaxLength="200" />
+    <Property Name="code" Type="nvarchar" MaxLength="10" />
+    <Property Name="timestamp" Type="datetime" />
+    <Property Name="error" Type="nvarchar" MaxLength="1000" />
+    <Property Name="recipient" Type="nvarchar" MaxLength="500" />
+    <Property Name="event" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MGListName">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="DelState" Type="tinyint" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="ListName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+</Schema>

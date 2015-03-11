@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="APICallsDetail" EntityType="Model.APICallsDetail" />
+    <EntitySet Name="ClickDetail" EntityType="Model.ClickDetail" />
+    <EntitySet Name="CustDataReport" EntityType="Model.CustDataReport" />
+    <EntitySet Name="CustDataTask" EntityType="Model.CustDataTask" />
+    <EntitySet Name="Email" EntityType="Model.Email" />
+    <EntitySet Name="EmailScore" EntityType="Model.EmailScore" />
+    <EntitySet Name="EmailSetting" EntityType="Model.EmailSetting" />
+    <EntitySet Name="FileUpload" EntityType="Model.FileUpload" />
+    <EntitySet Name="OpenDetail" EntityType="Model.OpenDetail" />
+    <EntitySet Name="RestSharpLog" EntityType="Model.RestSharpLog" />
+    <EntitySet Name="UserLogs" EntityType="Model.UserLogs" />
+    <EntitySet Name="Users" EntityType="Model.Users" />
+    <EntitySet Name="VmoneyDetailNew" EntityType="Model.VmoneyDetailNew" />
+  </EntityContainer>
+  <EntityType Name="APICallsDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="Int32" Name="APICount" />
+    <Property Type="String" Name="PlatformCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Operation" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IP" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ClickDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="String" Name="OwenerId" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="EmailId" />
+    <Property Type="Int32" Name="DataTaskId" />
+    <Property Type="String" Name="Email" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IPAddress" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Province" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Country" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Date" />
+    <Property Type="String" Name="Url" MaxLength="2050" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CustDataReport">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="DateTime" Name="Addtime" />
+    <Property Type="Int32" Name="CustDataTaskId" />
+    <Property Type="Int32" Name="Row" />
+    <Property Type="String" Name="ColumnNmae" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Message" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdateOrAdd" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="SendTime" />
+    <Property Type="DateTime" Name="DeliveryTime" />
+    <Property Type="DateTime" Name="OpenTime" />
+    <Property Type="DateTime" Name="ClickTime" />
+    <Property Type="DateTime" Name="UnsubscribedTime" />
+    <Property Type="DateTime" Name="FailureTime" />
+    <Property Type="DateTime" Name="BouncedTime" />
+    <Property Type="Byte" Name="BouncedType" />
+    <Property Type="String" Name="Platform" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CustDataTask">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="DateTime" Name="Addtime" />
+    <Property Type="DateTime" Name="Completetime" />
+    <Property Type="String" Name="FilePath" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="RecordCount" />
+    <Property Type="Int32" Name="CompleteCount" />
+    <Property Type="String" Name="State" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Email">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="String" Name="OwenerId" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FromName" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FromEmailAddress" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Subject" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Body" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EmailDesc" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="DataTaskId" />
+    <Property Type="DateTime" Name="SendTime" />
+    <Property Type="Int32" Name="EmailTaskId" />
+    <Property Type="String" Name="CampainId" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Domain" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="IsStatistic" />
+    <Property Type="Int32" Name="CEmailId" />
+    <Property Type="Byte" Name="IsError" />
+    <Property Type="String" Name="ErrorMessage" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FileName" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EmailScore">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="String" Name="Email" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="EmailType" />
+    <Property Type="Byte" Name="Score" />
+    <Property Type="DateTime" Name="LatestRecordTime" />
+  </EntityType>
+  <EntityType Name="EmailSetting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Account" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Enabled" Nullable="false" />
+    <Property Type="Int32" Name="Owner" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Int32" Name="DelState" />
+    <Property Type="DateTime" Name="Addtime" />
+    <Property Type="DateTime" Name="ValidateTime" />
+  </EntityType>
+  <EntityType Name="FileUpload">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="DateTime" Name="Addtime" />
+    <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FilePath" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="FileSize" />
+    <Property Type="String" Name="FileName" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Remarks" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FileType" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="TypeId" />
+    <Property Type="Byte" Name="Master" />
+    <Property Type="Byte" Name="TypeCode" />
+    <Property Type="String" Name="UpStatue" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ErrorMS" MaxLength="2000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="OpenDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Email" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IPAddress" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Province" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Country" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Date" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="Int32" Name="EmailId" />
+    <Property Type="Int32" Name="DataTaskId" />
+  </EntityType>
+  <EntityType Name="RestSharpLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Int32" Name="OwnerId" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="Byte" Name="Operate" />
+    <Property Type="String" Name="PhoneNo" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="VerifyCode" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IP" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="IsSuccess" />
+    <Property Type="String" Name="Result" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="VerifyType" />
+  </EntityType>
+  <EntityType Name="UserLogs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="LogLevel" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Operate" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MachineName" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IP" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Url" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Source" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Exception" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Message" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Byte" Name="DelState" />
+    <Property Type="DateTime" Name="Addtime" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="UserNo" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UserName" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="TypeId" />
+    <Property Type="Int32" Name="SubClassId" />
+    <Property Type="String" Name="RealName" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Sex" />
+    <Property Type="Int32" Name="GroupId" />
+    <Property Type="String" Name="Address" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Tel" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Birthday" />
+    <Property Type="String" Name="QQ" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WangWang" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LatelyLogin" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Status" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="DateTime" Name="LatestLoginTime" />
+    <Property Type="String" Name="LatestLoginIP" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="yqCode" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PhoneNo" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FaxNo" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="Vmoney" Precision="19" Scale="4" />
+    <Property Type="String" Name="Homesite" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ManagerName" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RefUserNo" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NickName" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EnglishName" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IdNumber" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="LoginWay" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="String" Name="Department" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Position" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Hobby" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HeadPortrait" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="StateBirthday" />
+    <Property Type="Int32" Name="DelState" />
+    <Property Type="DateTime" Name="Addtime" />
+    <Property Type="String" Name="UserCode" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CheckCode" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CodeTime" />
+    <Property Type="Int32" Name="CodeState" />
+    <Property Type="Int32" Name="TakeState" />
+    <Property Type="Int16" Name="Actid" />
+    <Property Type="Int32" Name="LoginCount" />
+    <Property Type="DateTime" Name="modify" />
+    <Property Type="Int32" Name="referrer" />
+    <Property Type="String" Name="TaobaoID" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="taobao_user_nick" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="social_uid" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="social_user_nick" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="openid" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="open_user_nick" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="VmoneyDetailNew">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="ParentId" />
+    <Property Type="Int32" Name="DelState" />
+    <Property Type="DateTime" Name="Addtime" />
+    <Property Type="Int32" Name="FromUserId" />
+    <Property Type="String" Name="ToUserId" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="Decimal" Name="Vmoney" Precision="19" Scale="4" />
+    <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="TypeId" />
+    <Property Type="String" Name="Description" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="taskid" />
+    <Property Type="Int16" Name="tasktype" />
+  </EntityType>
+</Schema>

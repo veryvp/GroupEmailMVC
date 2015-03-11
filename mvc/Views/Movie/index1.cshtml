@@ -1,0 +1,46 @@
+﻿@model System.Data.DataTable
+
+@{
+    ViewBag.Title = "index1";
+}
+
+<h2>index1</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table border="0" cellpadding="0" cellspacing="0">
+@foreach (System.Data.DataRow item in Model.Rows)
+{
+<tr>
+<td>
+@item["name"]
+</td>
+</tr>
+}
+</table>
+
+<div id="msg2"></div>
+
+<input type="button" onclick="aaa();" />
+<script>
+
+
+    function aaa() {
+        $.ajax({
+            url: "/Movie/ajaxdata",
+            dataType: "json",
+            cache: false,
+            data: null,
+            type: "POST",
+            success: function (data) {
+                alert(data.Data);
+                var msg = "";
+                for (var i = 0, length = data.Data.length; i < length; i++) {
+                    msg += "<DiV>Name:" + data.Data[i].name + ",id:" +data.Data[i].id + "</div>";
+                }
+                $("#msg2").html(msg);
+            }
+        });  
+    }
+</script>
